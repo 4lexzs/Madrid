@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Helvetica;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #B4C2D0;
+    padding: 20px;
+    text-align: center;
+}
+
+header a.logo-link {
+    display: inline-block;
+}
+
+header img.logo-img {
+    width: 200px;
+    height: auto;
+}
+
+.navbar {
+    background-color: #171A21;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.navbar-links a {
+    padding: 10px;
+    flex: 1;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a.active {
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    flex: 1;
+}
+
+aside {
+    background-color: #B4C2D0;
+    padding: 50px;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+aside.active {
+    display: flex;
+}
+
+aside .toc {
+    position: sticky;
+    top: 55px;
+    padding: 10px;
+    background-color: #B4C2D0;
+    border-radius: 8px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    order: 2;
+}
+
+footer {
+    background-color: #27333F;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.large-img {
+    width: 100%;
+    height: auto;
+}
+
+.medium-img {
+    width: 400px;
+    height: auto;
+}
+
+.small-img {
+    width: 200px;
+    height: auto;
+}
+
+.vertical-img {
+    width: 300px;
+    height: auto;
+}
+
+.logo-img {
+    width: 200px;
+    height: auto;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #171A21;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s, display 0.3s;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #27333F;
+}
+
+.toc {
+    border: none;
+    padding: 10px;
+    background-color: #B4C2D0;
+    border-radius: 8px;
+}
+
+.toc h3 {
+    margin-top: 0;
+}
+
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc ul ul {
+    padding-left: 20px;
+}
+
+.toc a {
+    text-decoration: none;
+    color: #000;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
+
+.source-list {
+    margin-top: 20px;
+}
+
+.source-item {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.source-item h2 {
+    margin-top: 0;
+}
+
+/* Media Queries für mobile Ansicht */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .aside-toggle {
+        display: block;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        width: 100%;
+        background-color: #171A21;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        order: 1;
+        width: 100%;
+    }
+
+    aside .toc {
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px;
+        order: 2;
+    }
+
+    footer {
+        position: static;
+        order: 3;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .aside-toggle {
+        display: none;
+    }
+
+    aside {
+        display: flex;
+    }
+}
